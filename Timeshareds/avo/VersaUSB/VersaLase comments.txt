@@ -1,0 +1,29 @@
+Need to:
+
+On Startup:
+
+Set mode to Digital Modulation
+Set default power
+
+While Running:
+
+Fetch temp.
+Update Power
+
+
+LV comm.s uses a custom .NET node
+ Command-line based
+
+Init:
+VersaHub (the source object)
+VersaHub > InitVersaHub
+
+Syntax: 'a.CMD' where a = laser module (atm, a/b/c = r/g/b )
+
+GET temperature: a.?OBT, responds a.OBT = NN (deg C)
+
+SET Laser Power: a.LP = NN (mW?), returns current power
+Control mode: a.C = 0 ; If not already set, make laser operate on power control mode (as opposed to current control)
+On/off: a.LE = 1; (0/1 = off/on)
+
+SET to dig mod: a.PUL=1 
